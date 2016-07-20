@@ -19,7 +19,6 @@ function! vseq#vseq(is_rev, is_hex) range
     let pos_end[1] = pos_end[1] + diff_line
     let pos_end[2] = pos_end[2] + diff_col
 
-    echo "[" . pos_beg[1] . ":" . pos_beg[2] . "-" . pos_end[1] . ":" . pos_end[2] . "][" . pos_cur[1] . ":" . pos_cur[2] . "]"
     call s:vseq(pos_beg, pos_end, a:is_rev, a:is_hex)
 endfunction
 
