@@ -1,4 +1,4 @@
-j vseq.vim
+# vseq.vim
 
 ##INTRODUCTION
 *vseq* is a Vim plugin for generating sequential number vertically.  
