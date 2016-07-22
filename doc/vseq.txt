@@ -1,0 +1,182 @@
+*vseq.txt*	a summary
+
+Author  : dalance <dalance@gmail.com>
+License : MIT license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+==============================================================================
+CONTENTS					*vseq-contents*
+
+INTRODUCTION			|vseq-introduction|
+USAGE				|vseq-usage|
+  RECOMMENDED			|vseq-recommended|
+INTERFACE			|vseq-interface|
+  VARIABLES			  |vseq-variables|
+  COMMANDS			  |vseq-commands|
+  KEY-MAPPINGS			  |vseq-key-mappings|
+TODO				|vseq-todo|
+CHANGELOG			|vseq-changelog|
+
+
+==============================================================================
+INTRODUCTION					*vseq-introduction*
+
+*vseq* is a Vim plugin for generating sequential number vertically.
+
+Latest version:
+https://github.com/dalance/vseq.vim
+
+
+==============================================================================
+USAGE						*vseq-usage*
+
+Select same numbers vertically by visual block select, and execute |:VSeqIncrDec|.
+So, the numbers become the incremented sequence by decimal number.
+
+For example,
+
+0  0  0  0
+0  0  0  0
+0  0  0  0
+0  0  0  0
+0  0  0  0
+0  0  0  0
+0  0  0  0
+0  0  0  0
+0  0  0  0
+0  0  0  0
+0  0  0  0
+
+the previous buffer becomes the following by 
+- Select 1st column and execute |:VseqIncrDec|.
+- Select 2nd column and execute |:VseqIncrHex|.
+- Select 3rd column and execute |:VseqDecrDec|.
+- Select 4th column and execute |:VseqDecrHex|.
+
+ 0  0 10  a
+ 1  1  9  9
+ 2  2  8  8
+ 3  3  7  7
+ 4  4  6  6
+ 5  5  5  5
+ 6  6  4  4
+ 7  7  3  3
+ 8  8  2  2
+ 9  9  1  1
+10  a  0  0
+
+------------------------------------------------------------------------------
+RECOMMENDED					*vseq-recommended*
+
+If vim-operator-user plugin is installed, key-mappings by operator is
+avaliable. The key-mappings can do 'dot-repeat'.
+
+vim-operator-user plugin
+https://github.com/kana/vim-operator-user/
+
+
+==============================================================================
+INTERFACE					*vseq-interface*
+
+------------------------------------------------------------------------------
+VARIABLES					*vseq-variables*
+
+g:vseq#upper_case				*g:vseq#upper_case*
+	default value: = 0
+
+If |g:vseq#upper_case| is 1, the alphabets of hex number become uppercase.
+
+
+g:vseq#padding_right				*g:vseq#padding_right*
+	default value: = 0
+
+If |g:vseq#padding_right| is 1, the padding by white space becomes right side
+of number.
+The option is ignored at zero padding.
+
+
+------------------------------------------------------------------------------
+COMMANDS					*vseq-commands*
+
+:VSeqIncrOct					*:VSeqIncrOct*
+:VSeqIncrDec					*:VSeqIncrDec*
+:VSeqIncrHex					*:VSeqIncrHex*
+
+Generate sequential number incrementally.
+Suffix( Oct/Dec/Hex ) means the radix of number.
+
+
+:VSeqDecrOct					*:VSeqDecrOct*
+:VSeqDecrDec					*:VSeqDecrDec*
+:VSeqDecrHex					*:VSeqDecrHex*
+
+Generate sequential number decrementally.
+Suffix( Oct/Dec/Hex ) means the radix of number.
+
+
+------------------------------------------------------------------------------
+KEY-MAPPINGS					*vseq-key-mappings*
+
+<Plug>(vseq-incr-oct)				*<Plug>(vseq-incr-oct)*
+<Plug>(vseq-incr-dec)				*<Plug>(vseq-incr-dec)*
+<Plug>(vseq-incr-hex)				*<Plug>(vseq-incr-hex)*
+	available mode: visual select
+
+call |:VSeqIncrOct| / |:VSeqIncrDec| / |:VSeqIncrHex|.
+
+
+<Plug>(vseq-decr-oct)				*<Plug>(vseq-decr-oct)*
+<Plug>(vseq-decr-dec)				*<Plug>(vseq-decr-dec)*
+<Plug>(vseq-decr-hex)				*<Plug>(vseq-decr-hex)*
+	available mode: visual select
+
+call |:VSeqDecrOct| / |:VSeqDecrDec| / |:VSeqDecrHex|.
+
+
+<Plug>(operator-vseq-incr-oct)			*<Plug>(operator-vseq-incr-oct)*
+<Plug>(operator-vseq-incr-dec)			*<Plug>(operator-vseq-incr-dec)*
+<Plug>(operator-vseq-incr-hex)			*<Plug>(operator-vseq-incr-hex)*
+	available mode: visual select
+
+call |:VSeqIncrOct| / |:VSeqIncrDec| / |:VSeqIncrHex| as operator.
+This mappings is only avaibale when vim-operator-user plugin is installed.
+
+
+<Plug>(operator-vseq-decr-oct)			*<Plug>(operator-vseq-decr-oct)*
+<Plug>(operator-vseq-decr-dec)			*<Plug>(operator-vseq-decr-dec)*
+<Plug>(operator-vseq-decr-hex)			*<Plug>(operator-vseq-decr-hex)*
+	available mode: visual select
+
+call |:VSeqDecrOct| / |:VSeqDecrDec| / |:VSeqDecrHex| as operator.
+This mappings is only avaibale when vim-operator-user plugin is installed.
+
+
+==============================================================================
+TODO						*vseq-todo*
+
+
+
+==============================================================================
+CHANGELOG					*vseq-changelog*
+
+2016/7/23: Initial releasae
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
