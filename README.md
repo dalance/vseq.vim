@@ -1,4 +1,4 @@
-# vseq.vim
+j vseq.vim
 
 ##INTRODUCTION
 *vseq* is a Vim plugin for generating sequential number vertically.  
@@ -66,49 +66,27 @@ The option is ignored at zero padding.
 
 
 ###COMMANDS
-#### `:VSeqIncrOct`
-#### `:VSeqIncrDec`
-#### `:VSeqIncrHex`
-
-Generate sequential number incrementally.  
-Suffix( Oct/Dec/Hex ) means the radix of number.  
-
-
-#### `:VSeqDecrOct`
-#### `:VSeqDecrDec`
-#### `:VSeqDecrHex`
-
-Generate sequential number decrementally.  
-Suffix( Oct/Dec/Hex ) means the radix of number.  
-
+- `:VSeqIncrOct` : Generate sequential number incrementally by octal format.
+- `:VSeqIncrDec` : Generate sequential number incrementally by decimal format.
+- `:VSeqIncrHex` : Generate sequential number incrementally by hexadecimal format.
+- `:VSeqDecrOct` : Generate sequential number decrementally by octal format.
+- `:VSeqDecrDec` : Generate sequential number decrementally by decimal format.
+- `:VSeqDecrHex` : Generate sequential number decrementally by hexadecimal format.
 
 ###KEY-MAPPINGS
-#### `<Plug>(vseq-incr-oct)`
-#### `<Plug>(vseq-incr-dec)`
-#### `<Plug>(vseq-incr-hex)`
+- `<Plug>(vseq-incr-oct)` : call `:VSeqIncrOct`.  
+- `<Plug>(vseq-incr-dec)` : call `:VSeqIncrDec`.
+- `<Plug>(vseq-incr-hex)` : call `:VSeqIncrHex`.
+- `<Plug>(vseq-decr-oct)` : call `:VSeqDecrOct`.  
+- `<Plug>(vseq-decr-dec)` : call `:VSeqDecrDec`.
+- `<Plug>(vseq-decr-hex)` : call `:VSeqDecrHex`.
 
-call `:VSeqIncrOct` / `:VSeqIncrDec` / `:VSeqIncrHex`.  
+###KEY-MAPPINGS AS OPERATOR
+The following mappings is only avaibale when vim-operator-user plugin is installed.  
 
-
-#### `<Plug>(vseq-decr-oct)`
-#### `<Plug>(vseq-decr-dec)`
-#### `<Plug>(vseq-decr-hex)`
-
-call `:VSeqDecrOct` / `:VSeqDecrDec` / `:VSeqDecrHex`.  
-
-
-#### `<Plug>(operator-vseq-incr-oct)`
-#### `<Plug>(operator-vseq-incr-dec)`
-#### `<Plug>(operator-vseq-incr-hex)`
-
-call `:VSeqIncrOct` / `:VSeqIncrDec` / `:VSeqIncrHex` as operator.  
-This mappings is only avaibale when vim-operator-user plugin is installed.  
-
-
-#### `<Plug>(operator-vseq-decr-oct)`
-#### `<Plug>(operator-vseq-decr-dec)`
-#### `<Plug>(operator-vseq-decr-hex)`
-
-call `:VSeqDecrOct` / `:VSeqDecrDec` / `:VSeqDecrHex` as operator.  
-This mappings is only avaibale when vim-operator-user plugin is installed.  
-
+- `<Plug>(operatorvseq-incr-oct)` : call `:VSeqIncrOct` as operator.  
+- `<Plug>(operatorvseq-incr-dec)` : call `:VSeqIncrDec` as operator.
+- `<Plug>(operatorvseq-incr-hex)` : call `:VSeqIncrHex` as operator.
+- `<Plug>(operatorvseq-decr-oct)` : call `:VSeqDecrOct` as operator.  
+- `<Plug>(operatorvseq-decr-dec)` : call `:VSeqDecrDec` as operator.
+- `<Plug>(operatorvseq-decr-hex)` : call `:VSeqDecrHex` as operator.
