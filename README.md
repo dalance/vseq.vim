@@ -3,6 +3,8 @@
 ##INTRODUCTION
 *vseq* is a Vim plugin for generating sequential number vertically.  
 
+[![asciicast](https://asciinema.org/a/3i5yptlh2udbl9bkvrteee1ek.png)](https://asciinema.org/a/3i5yptlh2udbl9bkvrteee1ek)
+
 ##USAGE
 Select same numbers vertically by visual block select, and execute `:VSeqIncrDec`. So, the numbers become the incremented sequence by decimal number.  
 Unlike `g<CTRL-A>`, this plugin can select radix manually, and automatically aligns by white space or zero padding.
