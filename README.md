@@ -87,9 +87,9 @@ The option is ignored at zero padding.
 ###KEY-MAPPINGS AS OPERATOR
 The following mappings is only avaibale when vim-operator-user plugin is installed.  
 
-- `<Plug>(operatorvseq-incr-oct)` : call `:VSeqIncrOct` as operator.  
-- `<Plug>(operatorvseq-incr-dec)` : call `:VSeqIncrDec` as operator.
-- `<Plug>(operatorvseq-incr-hex)` : call `:VSeqIncrHex` as operator.
-- `<Plug>(operatorvseq-decr-oct)` : call `:VSeqDecrOct` as operator.  
-- `<Plug>(operatorvseq-decr-dec)` : call `:VSeqDecrDec` as operator.
-- `<Plug>(operatorvseq-decr-hex)` : call `:VSeqDecrHex` as operator.
+- `<Plug>(operator-vseq-incr-oct)` : call `:VSeqIncrOct` as operator.  
+- `<Plug>(operator-vseq-incr-dec)` : call `:VSeqIncrDec` as operator.
+- `<Plug>(operator-vseq-incr-hex)` : call `:VSeqIncrHex` as operator.
+- `<Plug>(operator-vseq-decr-oct)` : call `:VSeqDecrOct` as operator.  
+- `<Plug>(operator-vseq-decr-dec)` : call `:VSeqDecrDec` as operator.
+- `<Plug>(operator-vseq-decr-hex)` : call `:VSeqDecrHex` as operator.
